@@ -1,4 +1,5 @@
 package org.ioopm.calculator.ast; /// could place this in parser *for now*
+import java.lang.Math;
 
 public abstract class SymbolicExpression {
     private String name; 
