@@ -1,4 +1,4 @@
-public class Addition{
+public class Addition extends Binary{
     private float a;
     private float b;
 

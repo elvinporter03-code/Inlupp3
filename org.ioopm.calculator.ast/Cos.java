@@ -1,4 +1,4 @@
-public class Cos{
+public class Cos extends Unary{
     private float a;
 
     public Cos(float a){

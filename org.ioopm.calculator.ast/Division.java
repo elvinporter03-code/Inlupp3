@@ -1,4 +1,4 @@
-public class Division{
+public class Division extends Binary{
     private float a;
     private float b;
 

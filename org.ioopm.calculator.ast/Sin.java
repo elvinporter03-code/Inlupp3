@@ -1,4 +1,4 @@
-public class Sin{
+public class Sin extends Unary{
     private float a;
 
     public Sin(float a){

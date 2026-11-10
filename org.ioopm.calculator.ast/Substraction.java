@@ -1,4 +1,4 @@
-public class Subtraction{
+public class Subtraction extends Binary{
     private float a;
     private float b;
 
