@@ -61,6 +61,7 @@ public class Test{
         SymbolicExpression as = new Assignment(new Constant(7), new Variable("x")); 
         testEvaluating(new Variable("x"), as); 
         
+        testEvaluating(new Exp(new Constant(1)), new NamedConstant("e", Constants.namedConstants.get("e")));
 
     }
 

@@ -142,7 +142,7 @@ public class CalculatorParser {
         if (this.unallowedVars.contains(this.st.sval)) {
             throw new IllegalExpressionException("Error: cannot redefine " + this.st.sval);
         }
-
+    
         if (Constants.namedConstants.containsKey(this.st.sval)) {
             result = new NamedConstant(st.sval, Constants.namedConstants.get(st.sval));
         } else {

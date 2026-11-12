@@ -25,6 +25,9 @@ public Assignment(SymbolicExpression a, SymbolicExpression b){
     }
 
     public SymbolicExpression eval(Environment vars) {
+        if(!(this.getRhs() instanceof Variable)){
+            throw new IllegalAssignmentException();
+        }
         SymbolicExpression lhs = this.getLhs().eval(vars);
         SymbolicExpression result = vars.put((Variable) this.getRhs(), lhs);
         return lhs;

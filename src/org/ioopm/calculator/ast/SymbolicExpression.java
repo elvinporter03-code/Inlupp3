@@ -26,4 +26,8 @@ public abstract class SymbolicExpression {
     public boolean isCommand(){
         return false;
     }
+
+    public boolean isNamedConstant(){
+        return false;
+    }
 }
