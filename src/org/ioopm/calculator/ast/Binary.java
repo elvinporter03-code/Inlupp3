@@ -9,16 +9,22 @@ public abstract class Binary extends SymbolicExpression {
         this.rhs = b;
     }
     public String toString() {
-        String p = this.lhs.toString() + " " + this.getName();
-        if(this.lhs.getPriority() < this.getPriority()){
-            p = "(" +this.lhs.toString() + ") " + this.getName();
+        String p = this.getLhs().toString() + " " + this.getName();
+        if(this.getLhs().getPriority() < this.getPriority()){
+            p = "(" +this.getLhs().toString() + ") " + this.getName();
         } 
-        if(this.rhs.getPriority() < this.getPriority()){
-            p += " (" + this.rhs.toString() + ") ";
+        if(this.getRhs().getPriority() < this.getPriority()){
+            p += " (" + this.getRhs().toString() + ")";
         }
         else {
-            p += " " + this.rhs.toString(); 
+            p += " " + this.getRhs().toString(); 
         }
         return p;
+    }
+    public SymbolicExpression getLhs(){
+        return this.lhs;
+    }
+    public SymbolicExpression getRhs(){
+        return this.rhs;
     }
 }

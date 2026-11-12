@@ -13,7 +13,11 @@ public abstract class Unary extends SymbolicExpression{
 
     public String toString() {
     /// Note how the call to toString() is not necessary
-        return this.getName() + " " + this.argument.toString();
+        return this.getName() + " " + this.getArgument().toString();
+    }
+
+    public SymbolicExpression getArgument(){
+        return this.argument;
     }
 
 }

@@ -18,4 +18,8 @@ public abstract class SymbolicExpression {
     public double getValue(){
         throw new RuntimeException("getValue() called on non-constant");
     }
+
+    public SymbolicExpression eval(Environment vars){
+        return null;
+    }
 }

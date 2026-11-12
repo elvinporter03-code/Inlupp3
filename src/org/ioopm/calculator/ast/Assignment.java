@@ -12,4 +12,16 @@ public Assignment(SymbolicExpression a, SymbolicExpression b){
     public int getPriority(){
         return 100;
     }
+
+    public boolean equals(Object other) {
+        if (other instanceof Assignment) {
+            return this.equals((Assignment) other);
+        } else {
+            return false;
+        }
+    }
+
+    public boolean equals(Assignment other) {
+        return this.getLhs() == other.getLhs() && this.getRhs() == other.getRhs();
+    }
 }

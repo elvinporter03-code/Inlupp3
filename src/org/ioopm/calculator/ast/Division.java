@@ -12,4 +12,39 @@ public class Division extends Binary{
     public int getPriority(){
         return 40;
     }
+
+    /*public boolean equals(Object other) {
+        if (other instanceof Division) {
+            return this.equals((Division) other);
+        } else {
+            return false;
+        }
+    }
+
+    public boolean equals(Division other) {
+        double equality = (this.getLhs()/this.getRhs())/(other.getLhs()/other.getRhs());
+        return equality == 1;
+    }*/
+
+    public boolean equals(Object other) {
+        if (other instanceof Division) {
+            return this.equals((Division) other);
+        } else {
+            return false;
+        }
+    }
+
+    public boolean equals(Division other) {
+        return this.getLhs() == other.getLhs() && this.getRhs() == other.getRhs();
+    }
+
+    public SymbolicExpression eval(Environment vars) {
+        SymbolicExpression lhs = this.getLhs().eval(vars);
+        SymbolicExpression rhs = this.getRhs().eval(vars);
+        if (lhs.isConstant() && rhs.isConstant()) {
+            return new Constant(lhs.getValue() / rhs.getValue());
+        } else {
+            return new Division(lhs, rhs);
+        }
+    }
 }
