@@ -28,4 +28,5 @@ public class Log extends Unary{
         } else {
             return new Log(arg);
     }
+    }
 }

@@ -22,4 +22,8 @@ public abstract class SymbolicExpression {
     public SymbolicExpression eval(Environment vars){
         return null;
     }
+    
+    public boolean isCommand(){
+        return false;
+    }
 }

@@ -27,5 +27,6 @@ public class Exp extends Unary{
             return new Constant(Math.exp(arg.getValue()));
         } else {
             return new Exp(arg);
+        }
     }
 }

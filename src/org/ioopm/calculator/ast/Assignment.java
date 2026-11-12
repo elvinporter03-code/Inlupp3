@@ -6,7 +6,6 @@ public Assignment(SymbolicExpression a, SymbolicExpression b){
     }
     public String getName(){
         throw new RuntimeException("getName() called on expression with no operator");
-        return "=";
     }
 
     public int getPriority(){
@@ -22,6 +21,12 @@ public Assignment(SymbolicExpression a, SymbolicExpression b){
     }
 
     public boolean equals(Assignment other) {
-        return this.getLhs() == other.getLhs() && this.getRhs() == other.getRhs();
+        return this.getLhs().equals(other.getLhs()) && this.getRhs().equals(other.getRhs());
+    }
+
+    public SymbolicExpression eval(Environment vars) {
+        SymbolicExpression lhs = this.getLhs().eval(vars);
+        SymbolicExpression result = vars.put((Variable) this.getRhs(), lhs);
+        return lhs;
     }
 }

@@ -28,4 +28,5 @@ public class Negation extends Unary{
         } else {
             return new Negation(arg);
     }
+    }
 }

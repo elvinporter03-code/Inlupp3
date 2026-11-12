@@ -5,6 +5,6 @@ all:
 run:
 	java -cp classes org/Test
 test:
-	java -cp classes Test
+	java -ea -cp classes org.ioopm.calculator.Test
 clean:
 	rm -rf classes

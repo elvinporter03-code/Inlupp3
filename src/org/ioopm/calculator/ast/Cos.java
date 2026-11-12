@@ -26,5 +26,6 @@ public class Cos extends Unary{
             return new Constant(Math.cos(arg.getValue()));
         } else {
             return new Cos(arg);
+        }
     }
 }
