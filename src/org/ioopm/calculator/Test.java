@@ -29,7 +29,7 @@ public class Test{
         SymbolicExpression b1 = new Constant(42);
         testEvaluating(b1, a1); /// Tests if reducing a returns b (it should!)
 
-        // Test that should pass
+        // Test that should pass !!!
         SymbolicExpression a2 = new Multiplication(new Constant(5), new Constant(37));
         SymbolicExpression b2 = new Constant(185);
         testEvaluating(b2, a2); 
