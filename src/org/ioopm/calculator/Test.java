@@ -62,6 +62,8 @@ public class Test{
         testEvaluating(new Variable("x"), as); 
         
         testEvaluating(new Exp(new Constant(1)), new NamedConstant("e", Constants.namedConstants.get("e")));
+        
+        testClear();
 
     }
 
@@ -81,6 +83,20 @@ public class Test{
             System.out.println("Passed: " + r);
         } else {
             System.out.println("Error: expected '" + r1 + "' but got '" + e + "'");
+        }
+    }
+
+    public static void testClear(){
+        Environment vars =  new Environment();
+        SymbolicExpression a = new Assignment(new Constant(7), new Variable("x")); 
+        SymbolicExpression var = new Variable("x");
+        SymbolicExpression e = var.eval(vars);
+        SymbolicExpression clear = new Clear(vars);
+        SymbolicExpression e2 = var.eval(vars);
+        if(e != e2){
+            System.out.println("Passed: variable was cleared");
+        } else{
+            System.out.println("Error: expected undefined'but got '" + e + "'");
         }
     }
 }
