@@ -91,7 +91,8 @@ public class Test{
         SymbolicExpression a = new Assignment(new Constant(7), new Variable("x")); 
         SymbolicExpression var = new Variable("x");
         SymbolicExpression e = var.eval(vars);
-        SymbolicExpression clear = new Clear(vars);
+        SymbolicExpression clearObject = Clear.instance();
+        clearObject.run(vars);
         SymbolicExpression e2 = var.eval(vars);
         if(e != e2){
             System.out.println("Passed: variable was cleared");

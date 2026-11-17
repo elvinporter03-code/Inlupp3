@@ -6,4 +6,12 @@ public class Vars extends Command{
         public static Vars instance() {
             return theInstance;
         }
+
+        public boolean run(Environment vars){
+            for (Variable v : vars.keySet()) {
+                SymbolicExpression value = vars.get(v);
+                System.out.println(v + " = " + value + "\n");
+            }
+            return true;
+        } 
 }

@@ -30,4 +30,8 @@ public abstract class SymbolicExpression {
     public boolean isNamedConstant(){
         return false;
     }
+
+    public boolean run(Environment vars) throws IllegalCommandUsageException{
+        throw new IllegalCommandUsageException();
+    }
 }

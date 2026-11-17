@@ -1,6 +1,6 @@
 package org.ioopm.calculator.parser;
 
-import package org.ioopm.calculator.ast.*;
+import org.ioopm.calculator.ast.*;
 
 import java.io.StreamTokenizer;
 import java.io.StringReader;
